@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+class Onboarding2pScreen extends StatefulWidget {
+  const Onboarding2pScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<Onboarding2pScreen> createState() => _Onboarding2pScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  int currentPage = 0;
+class _Onboarding2pScreenState extends State<Onboarding2pScreen> {
+
+  int currentPage = 1;
   int totalPages = 3;
   @override
   Widget build(BuildContext context) {
@@ -19,17 +20,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: 600,
-              child: Image.asset("assets/Onboarding1.png", fit: BoxFit.cover),
+              child: Image.asset(
+                "assets/Onboarding2.png",
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(height: 30),
             Text(
-              "Locate",
+              "Unlock",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Color(0xff3D003E),
                 fontSize: 32,
               ),
             ),
+        
             SizedBox(height: 20),
             Center(
               child: Container(
@@ -37,7 +42,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    "Excepteur sint occaecat cupidatat  non proident, sunt in culpa qui officia.",
+                    "Sunt in culpa qui officia deserunt mollit anim id est est laborum.",
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
@@ -46,7 +51,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
             ),
-
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(
@@ -64,7 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
-
+        
                     Row(
                       children: List.generate(totalPages, (index) {
                         return Container(
@@ -80,7 +84,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         );
                       }),
                     ),
-
+        
                     TextButton(
                       onPressed: () {},
                       child: Text(
@@ -92,6 +96,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
             ),
+        
+        
+        
           ],
         ),
       ),
